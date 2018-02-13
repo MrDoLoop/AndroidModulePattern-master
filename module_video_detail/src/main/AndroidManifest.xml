@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.netease.pineapple.module.video.detail">
+
+<application android:theme="@style/AppTheme">
+    <activity
+        android:name=".VideoDetailActivity"
+        android:screenOrientation="portrait" />
+</application>
+
+</manifest>
