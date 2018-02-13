@@ -38,7 +38,6 @@ dependencies {
     api deps.support.cardview
     api deps.support.percent
     api deps.support.recyclerview
-//    api deps.constraint_layout
 
     // RxJava and retrofit
     api deps.rx_android
@@ -46,8 +45,13 @@ dependencies {
     api deps.retrofit.runtime
     api deps.retrofit.gson
     api deps.retrofit.adapter
+    api deps.retrofit.rxlifecycle
+    api deps.retrofit.rxlifecycle_components
 
+    api deps.okhttp
+    api deps.okhttp_log_interceptor
     // other
+
 
     api deps.event_bus
     api deps.gson

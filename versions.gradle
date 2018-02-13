@@ -12,15 +12,16 @@ versions.glide = "3.8.0"
 versions.rxjava2 = "2.1.7"
 versions.rx_android = "2.0.1"
 versions.retrofit = "2.3.0"
+versions.rxlifecycle = "2.2.1"
 versions.event_bus = "2.4.0"
 versions.gson = "2.8.2"
 versions.permission = "1.1.2"
 versions.utils = "1.10.0"
 versions.logger = "1.15"
+versions.okhttp = "3.9.0"
 //Arouter
 versions.arouter_compiler = "1.1.4"
 versions.arouter_api = "1.3.1"
-
 def deps = [:]
 
 def support = [:]
@@ -41,6 +42,8 @@ def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
 retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.rxlifecycle = "com.trello.rxlifecycle2:rxlifecycle:$versions.rxlifecycle"
+retrofit.rxlifecycle_components = "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle"
 deps.retrofit = retrofit
 
 
@@ -49,6 +52,9 @@ deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_g
 deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
 deps.rx_android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
 //other
+deps.okhttp = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+deps.okhttp_log_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+
 deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
 //deps.event_bus = "org.greenrobot:eventbus:$versions.event_bus"
 deps.event_bus = "de.greenrobot:eventbus:$versions.event_bus"
