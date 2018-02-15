@@ -27,7 +27,7 @@ public class BaseApplication extends Application {
     private List<IApplicationDelegate> mAppDelegateList;
 
 
-    public static BaseApplication getIns() {
+    public static BaseApplication getInstance() {
         return sInstance;
     }
 
