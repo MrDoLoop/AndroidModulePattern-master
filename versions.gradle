@@ -17,7 +17,7 @@ versions.event_bus = "2.4.0"
 versions.gson = "2.8.2"
 versions.permission = "1.1.2"
 versions.utils = "1.10.0"
-versions.logger = "1.15"
+versions.logger = "2.1.1"
 versions.okhttp = "3.9.0"
 //Arouter
 versions.arouter_compiler = "1.1.4"

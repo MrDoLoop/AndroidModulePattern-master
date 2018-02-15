@@ -61,7 +61,7 @@ public class ImageUtils {
      * @param listener 回调
      */
     public static void loadBitMap(String path, final onLoadBitmap listener) {
-        Glide.with(Utils.getContext()).load(path).asBitmap().into(new SimpleTarget<Bitmap>() {
+        Glide.with(Utils.getAppContext()).load(path).asBitmap().into(new SimpleTarget<Bitmap>() {
 
             @Override
             public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {

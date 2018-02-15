@@ -18,7 +18,7 @@ import android.view.View;
  */
 public class Utils {
 
-    private static Context context;
+    private static Context AppContext;
 
     private Utils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
@@ -30,7 +30,7 @@ public class Utils {
      * @param context 上下文
      */
     public static void init(Context context) {
-        Utils.context = context.getApplicationContext();
+        Utils.AppContext = context.getApplicationContext();
     }
 
     /**
@@ -38,8 +38,8 @@ public class Utils {
      *
      * @return ApplicationContext
      */
-    public static Context getContext() {
-        if (context != null) return context;
+    public static Context getAppContext() {
+        if (AppContext != null) return AppContext;
         throw new NullPointerException("u should init first");
     }
 
@@ -71,7 +71,7 @@ public class Utils {
      * @return String
      */
     public static String getString(@StringRes int id) {
-        return context.getResources().getString(id);
+        return AppContext.getResources().getString(id);
     }
 
     /**
@@ -80,10 +80,10 @@ public class Utils {
      * @return {@code true}: 是<br>{@code false}: 否
      */
     public static boolean isAppDebug() {
-        if (StringUtils.isSpace(context.getPackageName())) return false;
+        if (StringUtils.isSpace(AppContext.getPackageName())) return false;
         try {
-            PackageManager pm = context.getPackageManager();
-            ApplicationInfo ai = pm.getApplicationInfo(context.getPackageName(), 0);
+            PackageManager pm = AppContext.getPackageManager();
+            ApplicationInfo ai = pm.getApplicationInfo(AppContext.getPackageName(), 0);
             return ai != null && (ai.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

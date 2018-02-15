@@ -63,8 +63,8 @@ public class HttpClient {
     }
 
     private HttpClient() {
-//        ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(Utils.getContext()));
-//        //HttpsUtil.SSLParams sslParams = HttpsUtil.getSslSocketFactory(Utils.getContext(), R.raw.cer,STORE_PASS , STORE_ALIAS);
+//        ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(Utils.getAppContext()));
+//        //HttpsUtil.SSLParams sslParams = HttpsUtil.getSslSocketFactory(Utils.getAppContext(), R.raw.cer,STORE_PASS , STORE_ALIAS);
 //        okHttpClient = new OkHttpClient.Builder()
 //                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
 //                //.sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
