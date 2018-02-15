@@ -38,7 +38,7 @@ android {
         }
     }
 
-    resourcePrefix 'module_video_detail_'
+    resourcePrefix 'module_login_'
 
     buildTypes {
         release {
