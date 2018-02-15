@@ -1,4 +1,4 @@
-package com.guiying.module.common.base;
+package com.netease.pineapple.base;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.annotation.Keep;
 import android.util.Log;
 
-import com.guiying.module.common.utils.Utils;
+import com.netease.pineapple.utils.PPUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -197,7 +197,7 @@ public class ClassUtils {
             }
         }
 
-        if (Utils.isAppDebug()) {
+        if (PPUtils.isAppDebug()) {
             // Search instant run support only debuggable
             sourcePaths.addAll(tryLoadInstantRunDexFile(applicationInfo));
         }

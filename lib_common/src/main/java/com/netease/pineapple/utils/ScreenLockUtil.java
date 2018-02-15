@@ -1,4 +1,4 @@
-package com.guiying.module.common.utils;
+package com.netease.pineapple.utils;
 
 import android.app.Activity;
 import android.app.KeyguardManager;

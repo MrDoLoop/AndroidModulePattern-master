@@ -1,4 +1,4 @@
-package com.guiying.module.common.utils;
+package com.netease.pineapple.utils;
 
 
 import android.app.Activity;
@@ -16,11 +16,11 @@ import android.view.View;
 /**
  * <p>Utils初始化相关 </p>
  */
-public class Utils {
+public class PPUtils {
 
     private static Context AppContext;
 
-    private Utils() {
+    private PPUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
@@ -30,7 +30,7 @@ public class Utils {
      * @param context 上下文
      */
     public static void init(Context context) {
-        Utils.AppContext = context.getApplicationContext();
+        PPUtils.AppContext = context.getApplicationContext();
     }
 
     /**

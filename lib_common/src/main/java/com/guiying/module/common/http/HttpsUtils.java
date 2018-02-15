@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.annotation.RawRes;
 import android.text.TextUtils;
 
-import com.guiying.module.common.utils.CloseUtils;
+import com.netease.pineapple.utils.CloseUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

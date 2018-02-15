@@ -5,7 +5,7 @@ import android.support.annotation.Keep;
 import android.support.annotation.StringRes;
 import android.support.v7.app.ActionBar;
 
-import com.guiying.module.common.R;
+import com.netease.pineapple.module.common.R;
 
 /**
  * BaseActionBarActivity继承于BaseActivity，封装了actionBar的逻辑；

@@ -1,4 +1,4 @@
-package com.guiying.module.common.utils;
+package com.netease.pineapple.utils;
 
 import java.io.Closeable;
 import java.io.IOException;

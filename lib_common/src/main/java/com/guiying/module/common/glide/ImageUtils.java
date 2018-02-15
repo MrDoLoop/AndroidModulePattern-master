@@ -12,7 +12,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.guiying.module.common.utils.Utils;
+import com.netease.pineapple.utils.PPUtils;
 
 /**
  * <p> 图片加载工具类</p>
@@ -61,7 +61,7 @@ public class ImageUtils {
      * @param listener 回调
      */
     public static void loadBitMap(String path, final onLoadBitmap listener) {
-        Glide.with(Utils.getAppContext()).load(path).asBitmap().into(new SimpleTarget<Bitmap>() {
+        Glide.with(PPUtils.getAppContext()).load(path).asBitmap().into(new SimpleTarget<Bitmap>() {
 
             @Override
             public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {

@@ -1,4 +1,4 @@
-package com.guiying.module.common.utils;
+package com.netease.pineapple.utils;
 
 /**
  * 字符串相关工具类

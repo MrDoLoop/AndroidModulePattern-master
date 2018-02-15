@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">组件化项目</string>
+    <string name="module_app_name">网易菠萝视频</string>
 
-    <string name="global_scheme">module</string>
+    <string name="module_app_global_scheme">module</string>
 </resources>

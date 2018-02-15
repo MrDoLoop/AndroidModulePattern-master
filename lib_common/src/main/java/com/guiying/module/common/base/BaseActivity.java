@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.guiying.module.common.R;
-import com.guiying.module.common.utils.Utils;
+import com.netease.pineapple.module.common.R;
+import com.netease.pineapple.utils.PPUtils;
 
 /**
  * <p>Activity基类 </p>
@@ -79,7 +79,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param frameId
      */
     protected void addFragment(BaseFragment fragment, @IdRes int frameId) {
-        Utils.checkNotNull(fragment);
+        PPUtils.checkNotNull(fragment);
         getSupportFragmentManager().beginTransaction()
                 .add(frameId, fragment, fragment.getClass().getSimpleName())
                 .addToBackStack(fragment.getClass().getSimpleName())
@@ -94,7 +94,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param frameId
      */
     protected void replaceFragment(BaseFragment fragment, @IdRes int frameId) {
-        Utils.checkNotNull(fragment);
+        PPUtils.checkNotNull(fragment);
         getSupportFragmentManager().beginTransaction()
                 .replace(frameId, fragment, fragment.getClass().getSimpleName())
                 .addToBackStack(fragment.getClass().getSimpleName())
@@ -108,7 +108,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param fragment
      */
     protected void hideFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
+        PPUtils.checkNotNull(fragment);
         getSupportFragmentManager().beginTransaction()
                 .hide(fragment)
                 .commitAllowingStateLoss();
@@ -121,7 +121,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param fragment
      */
     protected void showFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
+        PPUtils.checkNotNull(fragment);
         getSupportFragmentManager().beginTransaction()
                 .show(fragment)
                 .commitAllowingStateLoss();
@@ -134,7 +134,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param fragment
      */
     protected void removeFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
+        PPUtils.checkNotNull(fragment);
         getSupportFragmentManager().beginTransaction()
                 .remove(fragment)
                 .commitAllowingStateLoss();

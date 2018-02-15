@@ -3,11 +3,11 @@ package com.guiying.module.common.http;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.guiying.module.common.R;
-import com.guiying.module.common.utils.NetworkUtils;
-import com.guiying.module.common.utils.StringUtils;
-import com.guiying.module.common.utils.ToastUtils;
-import com.guiying.module.common.utils.Utils;
+import com.netease.pineapple.module.common.R;
+import com.netease.pineapple.utils.NetworkUtils;
+import com.netease.pineapple.utils.StringUtils;
+import com.netease.pineapple.utils.ToastUtils;
+import com.netease.pineapple.utils.PPUtils;
 import com.orhanobut.logger.Logger;
 
 import java.io.IOException;
@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
@@ -63,8 +62,8 @@ public class HttpClient {
     }
 
     private HttpClient() {
-//        ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(Utils.getAppContext()));
-//        //HttpsUtil.SSLParams sslParams = HttpsUtil.getSslSocketFactory(Utils.getAppContext(), R.raw.cer,STORE_PASS , STORE_ALIAS);
+//        ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(PPUtils.getAppContext()));
+//        //HttpsUtil.SSLParams sslParams = HttpsUtil.getSslSocketFactory(PPUtils.getAppContext(), R.raw.cer,STORE_PASS , STORE_ALIAS);
 //        okHttpClient = new OkHttpClient.Builder()
 //                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
 //                //.sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
@@ -127,7 +126,7 @@ public class HttpClient {
     private void request(final Builder builder, final OnResultListener onResultListener) {
         if (!NetworkUtils.isConnected()) {
             ToastUtils.showLongToastSafe(R.string.current_internet_invalid);
-            onResultListener.onFailure(Utils.getString(R.string.current_internet_invalid));
+            onResultListener.onFailure(PPUtils.getString(R.string.current_internet_invalid));
             return;
         }
         mCall.enqueue(new Callback<ResponseBody>() {
