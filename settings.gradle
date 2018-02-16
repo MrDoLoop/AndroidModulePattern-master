@@ -1,4 +1,4 @@
-include ':lib_common',
+include ':lib_common', ':module_pp_base',
         ':module_login',
         //':module_main_frame',
         ':module_share',

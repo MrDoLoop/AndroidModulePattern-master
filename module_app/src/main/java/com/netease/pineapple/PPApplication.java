@@ -4,8 +4,8 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.netease.pineapple.base.BaseApplication;
-import com.netease.pineapple.utils.PPUtils;
+import com.netease.pineapple.common.base.BaseApplication;
+import com.netease.pineapple.common.utils.PPUtils;
 
 public class PPApplication extends BaseApplication {
 

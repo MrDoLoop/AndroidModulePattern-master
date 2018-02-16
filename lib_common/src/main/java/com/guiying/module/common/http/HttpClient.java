@@ -4,10 +4,10 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import com.netease.pineapple.module.common.R;
-import com.netease.pineapple.utils.NetworkUtils;
-import com.netease.pineapple.utils.StringUtils;
-import com.netease.pineapple.utils.ToastUtils;
-import com.netease.pineapple.utils.PPUtils;
+import com.netease.pineapple.common.utils.NetworkUtils;
+import com.netease.pineapple.common.utils.StringUtils;
+import com.netease.pineapple.common.utils.ToastUtils;
+import com.netease.pineapple.common.utils.PPUtils;
 import com.orhanobut.logger.Logger;
 
 import java.io.IOException;

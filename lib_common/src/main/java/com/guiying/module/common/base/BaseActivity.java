@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.netease.pineapple.module.common.R;
-import com.netease.pineapple.utils.PPUtils;
+import com.netease.pineapple.common.utils.PPUtils;
 
 /**
  * <p>Activity基类 </p>

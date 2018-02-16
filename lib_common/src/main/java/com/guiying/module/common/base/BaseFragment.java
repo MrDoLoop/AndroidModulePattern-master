@@ -5,7 +5,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Keep;
 import android.support.v4.app.Fragment;
 
-import com.netease.pineapple.utils.PPUtils;
+import com.netease.pineapple.common.utils.PPUtils;
 
 /**
  * <p>Fragment的基类</p>

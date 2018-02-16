@@ -1,6 +1,6 @@
 package debug;
 
-import com.netease.pineapple.base.BaseApplication;
+import com.netease.pineapple.common.base.BaseApplication;
 import com.guiying.module.common.http.HttpClient;
 import com.guiying.module.common.http.OnResultListener;
 import com.orhanobut.logger.Logger;

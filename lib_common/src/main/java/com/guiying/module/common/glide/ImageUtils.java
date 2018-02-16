@@ -12,7 +12,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.netease.pineapple.utils.PPUtils;
+import com.netease.pineapple.common.utils.PPUtils;
 
 /**
  * <p> 图片加载工具类</p>

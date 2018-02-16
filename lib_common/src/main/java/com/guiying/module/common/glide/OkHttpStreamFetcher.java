@@ -4,7 +4,7 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.util.ContentLengthInputStream;
-import com.netease.pineapple.utils.CloseUtils;
+import com.guiying.module.common.http.CloseUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
