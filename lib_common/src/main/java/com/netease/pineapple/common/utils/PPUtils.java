@@ -80,7 +80,6 @@ public class PPUtils {
      * @return {@code true}: 是<br>{@code false}: 否
      */
     public static boolean isAppDebug() {
-        if (StringUtils.isSpace(AppContext.getPackageName())) return false;
         try {
             PackageManager pm = AppContext.getPackageManager();
             ApplicationInfo ai = pm.getApplicationInfo(AppContext.getPackageName(), 0);
