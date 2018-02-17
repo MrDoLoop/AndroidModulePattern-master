@@ -7,14 +7,7 @@ package com.netease.pineapple.common.http;
 public interface ObserverEntityCallback<T> {
     void onRequestStart();
 
-    /**
-     * 该方法在子线程中调用 方便在返回数据前进行修改
-     * @param t
-     * @return
-     */
-    T onAboutToDeliverData(T t);
-
-    void onRequestSuccess(BaseEntity<T> t);
+    void onRequestSuccess(T t);
 
     void onRequestError(String msg, Throwable e);
 

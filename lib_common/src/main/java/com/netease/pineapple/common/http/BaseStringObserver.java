@@ -11,22 +11,22 @@ public abstract class BaseStringObserver implements Observer<String> , ObserverS
     }
 
     @Override
-    public void onSubscribe(Disposable d) {
+    final public void onSubscribe(Disposable d) {
         onRequestStart();
     }
 
     @Override
-    public void onNext(String value) {
+    final public void onNext(String value) {
         onRequestSuccess(value);
     }
 
     @Override
-    public void onError(Throwable e) {
+    final public void onError(Throwable e) {
         onRequestError(e.getLocalizedMessage(), e);
     }
 
     @Override
-    public void onComplete() {
+    final public void onComplete() {
         onRequestEnd();
     }
 

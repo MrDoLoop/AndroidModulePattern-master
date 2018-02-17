@@ -3,10 +3,6 @@ package com.netease.pineapple.common.http;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-/**
- * BaseEntityObserver
- * Created by jaycee on 2017/6/23.
- */
 public abstract class BaseEntityObserver<T> implements Observer<BaseEntity<T>> , ObserverEntityCallback<T> {
 
     public BaseEntityObserver() {
@@ -21,7 +17,8 @@ public abstract class BaseEntityObserver<T> implements Observer<BaseEntity<T>> ,
     @Override
     final public void onNext(BaseEntity<T> value) {
         if (value.isSuccess()) {
-            onRequestSuccess(value);
+            T t = value.getData();
+            onRequestSuccess(t);
         } else {
             onRequestError(value.getMsg(), new Throwable(value.getMsg()));
         }
@@ -39,7 +36,7 @@ public abstract class BaseEntityObserver<T> implements Observer<BaseEntity<T>> ,
 
     // callback回调
     @Override
-    public void onRequestSuccess(BaseEntity<T> s) {
+    public void onRequestSuccess(T s) {
 
     }
 
@@ -56,10 +53,5 @@ public abstract class BaseEntityObserver<T> implements Observer<BaseEntity<T>> ,
     @Override
     public void onRequestError(String msg, Throwable e) {
 
-    }
-
-    @Override
-    public T onAboutToDeliverData(T t) {
-        return t;
     }
 }
