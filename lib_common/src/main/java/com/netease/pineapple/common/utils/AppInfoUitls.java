@@ -41,7 +41,7 @@ public class AppInfoUitls {
             try {
                 sAPP_VER_NAME = PPUtils.getAppContext().getPackageManager().getPackageInfo(PPUtils.getAppContext().getPackageName(), 0).versionName;
             } catch (PackageManager.NameNotFoundException e) {
-                LUtils.i(e.getMessage());
+                LogUtils.i(e.getMessage());
             }
         }
         return sAPP_VER_NAME;
@@ -56,7 +56,7 @@ public class AppInfoUitls {
             try {
                 sAPP_VER_CODE = PPUtils.getAppContext().getPackageManager().getPackageInfo(PPUtils.getAppContext().getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e) {
-                LUtils.i(e.getMessage());
+                LogUtils.i(e.getMessage());
             }
         }
         return sAPP_VER_CODE;

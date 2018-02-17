@@ -12,12 +12,12 @@ public class ShareActivity extends BaseActionBarActivity {
 
     @Override
     protected int setTitleId() {
-        return com.netease.pineapple.module.video.detail.R.string.module_video_detail_app_name;
+        return 0;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.netease.pineapple.module.video.detail.R.layout.module_video_detail_activity_video_detail_layout);
+        //setContentView(com.netease.pineapple.module.video.detail.R.layout.module_video_detail_activity_video_detail_layout);
     }
 }

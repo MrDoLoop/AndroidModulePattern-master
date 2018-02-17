@@ -3,7 +3,7 @@ package com.netease.pineapple.common.http;
 import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
-import com.netease.pineapple.common.utils.LUtils;
+import com.netease.pineapple.common.utils.LogUtils;
 import com.netease.pineapple.common.utils.NetworkUtils;
 
 import java.io.IOException;
@@ -73,7 +73,7 @@ public class RetrofitFactory {
         HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                LUtils.i(message);
+                LogUtils.i(message);
             }
         });
         logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);

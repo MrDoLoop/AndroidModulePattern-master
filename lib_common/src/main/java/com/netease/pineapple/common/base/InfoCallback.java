@@ -1,4 +1,4 @@
-package com.guiying.module.common.base;
+package com.netease.pineapple.common.base;
 
 import android.support.annotation.Keep;
 

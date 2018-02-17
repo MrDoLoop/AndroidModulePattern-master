@@ -5,7 +5,7 @@
     <application
         android:name="com.netease.pineapple.PPApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/module_app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

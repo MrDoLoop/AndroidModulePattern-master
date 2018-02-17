@@ -8,7 +8,7 @@ import com.orhanobut.logger.Logger;
  * Created by zhaonan on 2018/2/16.
  */
 
-public class LUtils {
+public class LogUtils {
     public static void i(String msg){
         Logger.i(msg);
     }

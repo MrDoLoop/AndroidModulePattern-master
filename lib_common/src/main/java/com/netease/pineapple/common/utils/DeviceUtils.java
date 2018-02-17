@@ -50,14 +50,14 @@ public class DeviceUtils {
             int value = (int) opPostNotificationValue.get(Integer.class);
 
             enable = (int) checkOpNoThrowMethod.invoke(mAppOps, value, uid, PPUtils.getAppContext().getPackageName()) == AppOpsManager.MODE_ALLOWED;
-            LUtils.i( "system push permission ---------------- check ------------- " + enable);
+            LogUtils.i( "system push permission ---------------- check ------------- " + enable);
             return enable;
 
         } catch (Throwable e) {
             e.printStackTrace();
         }
         // 默认返回true
-        LUtils.i("system push permission ---------------- throwable ------------ always " + true);
+        LogUtils.i("system push permission ---------------- throwable ------------ always " + true);
         return true;
     }
 

@@ -1,9 +1,11 @@
-package com.guiying.module.common.base;
+package com.netease.pineapple.common.base;
 
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.Keep;
 import android.util.Log;
+
+import com.guiying.module.common.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;

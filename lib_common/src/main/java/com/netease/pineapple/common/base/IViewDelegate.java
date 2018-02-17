@@ -1,8 +1,10 @@
-package com.guiying.module.common.base;
+package com.netease.pineapple.common.base;
 
 
 import android.support.annotation.Keep;
 import android.view.View;
+
+import com.guiying.module.common.base.BaseFragment;
 
 /**
  * <p>类说明</p>
