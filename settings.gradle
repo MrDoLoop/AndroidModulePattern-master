@@ -1,6 +1,5 @@
 include ':lib_common', ':module_pp_base',
         ':module_login',
-        //':module_main_frame',
         ':module_share',
         ':module_video_detail',
         ':module_app',

@@ -44,6 +44,7 @@ dependencies {
     api deps.rxjava2
     api deps.retrofit.runtime
     api deps.retrofit.gson
+    api deps.retrofit.scalars
     api deps.retrofit.adapter
     api deps.retrofit.rxlifecycle
     api deps.retrofit.rxlifecycle_components

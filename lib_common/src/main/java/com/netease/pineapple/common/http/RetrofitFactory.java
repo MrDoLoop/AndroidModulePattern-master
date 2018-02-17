@@ -2,14 +2,13 @@ package com.netease.pineapple.common.http;
 
 import android.support.annotation.NonNull;
 
+import com.google.gson.Gson;
+import com.netease.pineapple.common.utils.LUtils;
 import com.netease.pineapple.common.utils.NetworkUtils;
-import com.netease.pineapple.common.utils.PPUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -19,11 +18,12 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitFactory {
 
     private static OkHttpClient sOkHttpClient;
-    public static String BASE_URL = "";
+    public static String sBASE_URL = "";
     private volatile static Retrofit sRetrofit;
 
     /**
@@ -63,15 +63,20 @@ public class RetrofitFactory {
     };
 
     public static void init(String baseUrl) {
-        BASE_URL = baseUrl;
+        sBASE_URL = baseUrl;
 
 //        // 指定缓存路径,缓存大小 50Mb
 //        Cache cache = new Cache(new File(PPUtils.getAppContext().getCacheDir(), "HttpCache"),
 //                1024 * 1024 * 50);
 
         // log监听
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                LUtils.i(message);
+            }
+        });
+        logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 //.cache(cache)
@@ -80,7 +85,7 @@ public class RetrofitFactory {
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
                 .addInterceptor(new NetMonitorInterceptor())
-                .addInterceptor(interceptor)
+                .addInterceptor(logInterceptor)
                 .retryOnConnectionFailure(true);
 
         sOkHttpClient = builder.build();
@@ -92,14 +97,31 @@ public class RetrofitFactory {
             synchronized (RetrofitFactory.class) {
                 if (sRetrofit == null) {
                     sRetrofit = new Retrofit.Builder()
-                            .baseUrl(BASE_URL)
+                            .baseUrl(sBASE_URL)
                             .client(sOkHttpClient)
+                            // 添加string的转换器
+                            .addConverterFactory(ScalarsConverterFactory.create())
+                            // 添加Gson转换器
                             .addConverterFactory(GsonConverterFactory.create())
+                            // 添加Retrofit到RxJava的转换器
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                             .build();
                 }
             }
         }
         return sRetrofit;
+    }
+
+    public static Retrofit getRetrofit(Gson gson) {
+        return new Retrofit.Builder()
+                .baseUrl(sBASE_URL)
+                // 添加string的转换器
+                .addConverterFactory(ScalarsConverterFactory.create())
+                // 添加Gson转换器
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                // 添加Retrofit到RxJava的转换器
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(sOkHttpClient)
+                .build();
     }
 }
