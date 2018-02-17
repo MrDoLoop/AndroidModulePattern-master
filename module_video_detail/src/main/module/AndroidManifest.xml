@@ -5,8 +5,8 @@
     <application
         android:name="debug.VideoDetailApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/module_video_detail_app_name"
+        android:icon="@drawable/ic_launcher"
+        android:label="菠萝视频详情组件"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 

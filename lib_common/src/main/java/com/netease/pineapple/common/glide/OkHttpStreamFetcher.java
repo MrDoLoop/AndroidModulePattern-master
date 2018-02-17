@@ -1,4 +1,4 @@
-package com.guiying.module.common.glide;
+package com.netease.pineapple.common.glide;
 
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.data.DataFetcher;

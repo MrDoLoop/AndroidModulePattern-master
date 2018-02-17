@@ -50,9 +50,4 @@ public abstract class BaseStringObserver implements Observer<String> , ObserverS
     public void onRequestError(String msg, Throwable e) {
 
     }
-
-    @Override
-    public String onAboutToDeliverData(String s) {
-        return s;
-    }
 }

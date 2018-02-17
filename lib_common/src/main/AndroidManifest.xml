@@ -17,7 +17,7 @@
 
     <application>
         <meta-data
-            android:name="com.guiying.module.common.glide.OkHttpGlideModule"
+            android:name="com.netease.pineapple.common.glide.OkHttpGlideModule"
             android:value="GlideModule" />
 
     </application>

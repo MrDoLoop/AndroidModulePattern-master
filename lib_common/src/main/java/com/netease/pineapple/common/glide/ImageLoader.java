@@ -1,4 +1,4 @@
-package com.guiying.module.common.glide;
+package com.netease.pineapple.common.glide;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,17 +9,38 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.netease.pineapple.common.utils.PPUtils;
+import com.netease.pineapple.common.utils.NetworkUtils;
 
-/**
- * <p> 图片加载工具类</p>
- *
- * @name ImageUtils
- */
-public class ImageUtils {
+public class ImageLoader {
+
+    public static void loadCenterCrop(Context context, String url, ImageView view, int defaultResId) {
+        if (NetworkUtils.isConnected()) {
+            Glide.with(context).load(url).crossFade().centerCrop().into(view);
+        } else {
+            view.setImageResource(defaultResId);
+        }
+    }
+
+    /**
+     * 带加载异常图片
+     */
+    public static void loadCenterCrop(Context context, String url, ImageView view, int defaultResId, int errorResId) {
+        if (NetworkUtils.isConnected()) {
+            Glide.with(context).load(url).crossFade().centerCrop().error(errorResId).into(view);
+        } else {
+            view.setImageResource(defaultResId);
+        }
+    }
+
+    /**
+     * 带监听处理
+     */
+    public static void loadCenterCrop(Context context, String url, ImageView view, RequestListener listener) {
+        Glide.with(context).load(url).crossFade().centerCrop().listener(listener).into(view);
+    }
 
     /**
      * 默认加载
@@ -51,28 +72,6 @@ public class ImageUtils {
      */
     public static void loadImageViewAnim(String path, int anim, ImageView mImageView) {
         Glide.with(mImageView.getContext()).load(path).animate(anim).into(mImageView);
-    }
-
-
-    /**
-     * 加载为bitmap
-     *
-     * @param path     图片地址
-     * @param listener 回调
-     */
-    public static void loadBitMap(String path, final onLoadBitmap listener) {
-        Glide.with(PPUtils.getAppContext()).load(path).asBitmap().into(new SimpleTarget<Bitmap>() {
-
-            @Override
-            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
-                listener.onReady(bitmap);
-            }
-
-            @Override
-            public void onLoadFailed(Exception e, Drawable errorDrawable) {
-                listener.onFailed();
-            }
-        });
     }
 
     /**

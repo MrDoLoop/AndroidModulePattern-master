@@ -1,4 +1,4 @@
-package com.guiying.module.common.glide;
+package com.netease.pineapple.common.glide;
 
 import android.content.Context;
 
