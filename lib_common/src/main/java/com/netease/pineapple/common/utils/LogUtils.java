@@ -1,7 +1,7 @@
 package com.netease.pineapple.common.utils;
 
 
-import com.orhanobut.logger.Logger;
+import android.util.Log;
 
 /**
  * Log 工具封装
@@ -9,7 +9,8 @@ import com.orhanobut.logger.Logger;
  */
 
 public class LogUtils {
+    private static final String TAG = "ttt"; // 赵楠的测试
     public static void i(String msg){
-        Logger.i(msg);
+        Log.i("", msg);
     }
 }

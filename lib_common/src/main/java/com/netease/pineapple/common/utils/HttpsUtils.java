@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.annotation.RawRes;
 import android.text.TextUtils;
 
-import com.guiying.module.common.http.CloseUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -73,7 +72,7 @@ public class HttpsUtils {
             InputStream certInput = new ByteArrayInputStream(rootCA.getEncoded());
             X509Certificate serverCert = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(certInput);
             //关闭流
-            CloseUtils.closeIO(certInput);
+            CloseIOUtils.closeIO(certInput);
 
             TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             //用我们之前的keyStore实例初始化TrustManagerFactory，这样trustManagerFactory就会信任keyStore中的证书
